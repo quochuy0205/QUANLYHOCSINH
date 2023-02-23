@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QUANLYHOCSINHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_ChucVu">
+          <Key>
+            <PropertyRef Name="MaCV" />
+          </Key>
+          <Property Name="MaCV" Type="int" Nullable="false" />
+          <Property Name="TenCV" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_DanhMucLoi">
+          <Key>
+            <PropertyRef Name="MAVP" />
+          </Key>
+          <Property Name="MAVP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENVP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIEM" Type="int" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGHIEMTRONG" Type="bit" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_GiaoVien">
+          <Key>
+            <PropertyRef Name="MAGV" />
+          </Key>
+          <Property Name="MAGV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="GIOITINH" Type="int" />
+          <Property Name="NGAYSINH" Type="date" />
+          <Property Name="HINHANH" Type="varbinary(max)" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="MaTD" Type="int" />
+          <Property Name="MaCV" Type="int" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_GiaoVienLop">
+          <Key>
+            <PropertyRef Name="MaGV_lop" />
+          </Key>
+          <Property Name="MaGV_lop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaGV" Type="int" />
+          <Property Name="MaLop" Type="int" />
+          <Property Name="MaNamHoc" Type="int" />
+          <Property Name="MaHK" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_HocKy">
+          <Key>
+            <PropertyRef Name="MaHK" />
+          </Key>
+          <Property Name="MaHK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenHK" Type="nvarchar" MaxLength="50" />
+          <Property Name="HeSo" Type="int" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_HocSinh">
+          <Key>
+            <PropertyRef Name="MaHS" />
+          </Key>
+          <Property Name="MaHS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="bit" />
+          <Property Name="NgaySinh" Type="datetime" />
+          <Property Name="DienThoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaDT" Type="int" />
+          <Property Name="MaTG" Type="int" />
+          <Property Name="MaLop" Type="int" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_KetQua">
+          <Key>
+            <PropertyRef Name="MaKQ" />
+          </Key>
+          <Property Name="MaKQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaMH" Type="int" />
+          <Property Name="MaHS" Type="int" />
+          <Property Name="DiemKT" Type="float" />
+          <Property Name="DiemThiLan1" Type="float" />
+          <Property Name="DiemThiLan2" Type="float" />
+          <Property Name="DiemTB" Type="float" />
+          <Property Name="XepLoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaNamHoc" Type="int" />
+          <Property Name="MaHocKy" Type="int" />
+          <Property Name="MaLop" Type="int" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_Lop">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLop" Type="nvarchar" MaxLength="50" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="SapXep" Type="int" />
+          <Property Name="MaTruong" Type="int" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_MonHoc">
+          <Key>
+            <PropertyRef Name="MaMH" />
+          </Key>
+          <Property Name="MaMH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenMH" Type="nvarchar" MaxLength="50" />
+          <Property Name="HeSo" Type="int" />
+          <Property Name="SoTiet" Type="int" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_NamHoc">
+          <Key>
+            <PropertyRef Name="MaNamHoc" />
+          </Key>
+          <Property Name="MaNamHoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenNamHoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_TrinhDo">
+          <Key>
+            <PropertyRef Name="MaTD" />
+          </Key>
+          <Property Name="MaTD" Type="int" Nullable="false" />
+          <Property Name="TenTD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_Truong">
+          <Key>
+            <PropertyRef Name="MaTruong" />
+          </Key>
+          <Property Name="MaTruong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTruong" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="DienThoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+          <Property Name="Website" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASS" Type="nvarchar" MaxLength="50" />
+          <Property Name="MATRUONG" Type="int" />
+          <Property Name="MALOP" Type="int" />
+          <Property Name="PHONE" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_ViPham">
+          <Key>
+            <PropertyRef Name="MaViPham" />
+          </Key>
+          <Property Name="MaViPham" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NgayViPham" Type="datetime" />
+          <Property Name="TongSoLoi" Type="int" />
+          <Property Name="TongDiem" Type="int" />
+          <Property Name="MaLop" Type="int" />
+          <Property Name="MaNamHoc" Type="int" />
+          <Property Name="MaHK" Type="int" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="250" />
+          <Property Name="Created_By" Type="int" />
+          <Property Name="Created_Date" Type="datetime" />
+          <Property Name="Updated_By" Type="int" />
+          <Property Name="Updated_Date" Type="datetime" />
+          <Property Name="Deleted_By" Type="int" />
+          <Property Name="Deleted_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_ViPham_CT">
+          <Key>
+            <PropertyRef Name="MaVPCT" />
+          </Key>
+          <Property Name="MaVPCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaViPham" Type="int" />
+          <Property Name="MaLoi" Type="int" />
+          <Property Name="TenLoi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Diem" Type="int" />
+          <Property Name="MaHS" Type="int" />
+          <Property Name="NgayViPham" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="QUANLYHOCSINHModelStoreContainer">
+          <EntitySet Name="tb_ChucVu" EntityType="Self.tb_ChucVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DanhMucLoi" EntityType="Self.tb_DanhMucLoi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_GiaoVien" EntityType="Self.tb_GiaoVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_GiaoVienLop" EntityType="Self.tb_GiaoVienLop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_HocKy" EntityType="Self.tb_HocKy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_HocSinh" EntityType="Self.tb_HocSinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_KetQua" EntityType="Self.tb_KetQua" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Lop" EntityType="Self.tb_Lop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_MonHoc" EntityType="Self.tb_MonHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NamHoc" EntityType="Self.tb_NamHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TrinhDo" EntityType="Self.tb_TrinhDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Truong" EntityType="Self.tb_Truong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_ViPham" EntityType="Self.tb_ViPham" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_ViPham_CT" EntityType="Self.tb_ViPham_CT" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUANLYHOCSINHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QUANLYHOCSINHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_ChucVu" EntityType="QUANLYHOCSINHModel.tb_ChucVu" />
+          <EntitySet Name="tb_DanhMucLoi" EntityType="QUANLYHOCSINHModel.tb_DanhMucLoi" />
+          <EntitySet Name="tb_GiaoVien" EntityType="QUANLYHOCSINHModel.tb_GiaoVien" />
+          <EntitySet Name="tb_GiaoVienLop" EntityType="QUANLYHOCSINHModel.tb_GiaoVienLop" />
+          <EntitySet Name="tb_HocKy" EntityType="QUANLYHOCSINHModel.tb_HocKy" />
+          <EntitySet Name="tb_HocSinh" EntityType="QUANLYHOCSINHModel.tb_HocSinh" />
+          <EntitySet Name="tb_KetQua" EntityType="QUANLYHOCSINHModel.tb_KetQua" />
+          <EntitySet Name="tb_Lop" EntityType="QUANLYHOCSINHModel.tb_Lop" />
+          <EntitySet Name="tb_MonHoc" EntityType="QUANLYHOCSINHModel.tb_MonHoc" />
+          <EntitySet Name="tb_NamHoc" EntityType="QUANLYHOCSINHModel.tb_NamHoc" />
+          <EntitySet Name="tb_TrinhDo" EntityType="QUANLYHOCSINHModel.tb_TrinhDo" />
+          <EntitySet Name="tb_Truong" EntityType="QUANLYHOCSINHModel.tb_Truong" />
+          <EntitySet Name="tb_User" EntityType="QUANLYHOCSINHModel.tb_User" />
+          <EntitySet Name="tb_ViPham" EntityType="QUANLYHOCSINHModel.tb_ViPham" />
+          <EntitySet Name="tb_ViPham_CT" EntityType="QUANLYHOCSINHModel.tb_ViPham_CT" />
+        </EntityContainer>
+        <EntityType Name="tb_ChucVu">
+          <Key>
+            <PropertyRef Name="MaCV" />
+          </Key>
+          <Property Name="MaCV" Type="Int32" Nullable="false" />
+          <Property Name="TenCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_DanhMucLoi">
+          <Key>
+            <PropertyRef Name="MAVP" />
+          </Key>
+          <Property Name="MAVP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENVP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIEM" Type="Int32" />
+          <Property Name="GHICHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGHIEMTRONG" Type="Boolean" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_GiaoVien">
+          <Key>
+            <PropertyRef Name="MAGV" />
+          </Key>
+          <Property Name="MAGV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GIOITINH" Type="Int32" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="HINHANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="MaTD" Type="Int32" />
+          <Property Name="MaCV" Type="Int32" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_GiaoVienLop">
+          <Key>
+            <PropertyRef Name="MaGV_lop" />
+          </Key>
+          <Property Name="MaGV_lop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaGV" Type="Int32" />
+          <Property Name="MaLop" Type="Int32" />
+          <Property Name="MaNamHoc" Type="Int32" />
+          <Property Name="MaHK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_HocKy">
+          <Key>
+            <PropertyRef Name="MaHK" />
+          </Key>
+          <Property Name="MaHK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenHK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HeSo" Type="Int32" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_HocSinh">
+          <Key>
+            <PropertyRef Name="MaHS" />
+          </Key>
+          <Property Name="MaHS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="Boolean" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaDT" Type="Int32" />
+          <Property Name="MaTG" Type="Int32" />
+          <Property Name="MaLop" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_KetQua">
+          <Key>
+            <PropertyRef Name="MaKQ" />
+          </Key>
+          <Property Name="MaKQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaMH" Type="Int32" />
+          <Property Name="MaHS" Type="Int32" />
+          <Property Name="DiemKT" Type="Double" />
+          <Property Name="DiemThiLan1" Type="Double" />
+          <Property Name="DiemThiLan2" Type="Double" />
+          <Property Name="DiemTB" Type="Double" />
+          <Property Name="XepLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaNamHoc" Type="Int32" />
+          <Property Name="MaHocKy" Type="Int32" />
+          <Property Name="MaLop" Type="Int32" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_Lop">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SapXep" Type="Int32" />
+          <Property Name="MaTruong" Type="Int32" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_MonHoc">
+          <Key>
+            <PropertyRef Name="MaMH" />
+          </Key>
+          <Property Name="MaMH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenMH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HeSo" Type="Int32" />
+          <Property Name="SoTiet" Type="Int32" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_NamHoc">
+          <Key>
+            <PropertyRef Name="MaNamHoc" />
+          </Key>
+          <Property Name="MaNamHoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenNamHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_TrinhDo">
+          <Key>
+            <PropertyRef Name="MaTD" />
+          </Key>
+          <Property Name="MaTD" Type="Int32" Nullable="false" />
+          <Property Name="TenTD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Truong">
+          <Key>
+            <PropertyRef Name="MaTruong" />
+          </Key>
+          <Property Name="MaTruong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTruong" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MATRUONG" Type="Int32" />
+          <Property Name="MALOP" Type="Int32" />
+          <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_ViPham">
+          <Key>
+            <PropertyRef Name="MaViPham" />
+          </Key>
+          <Property Name="MaViPham" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NgayViPham" Type="DateTime" Precision="3" />
+          <Property Name="TongSoLoi" Type="Int32" />
+          <Property Name="TongDiem" Type="Int32" />
+          <Property Name="MaLop" Type="Int32" />
+          <Property Name="MaNamHoc" Type="Int32" />
+          <Property Name="MaHK" Type="Int32" />
+          <Property Name="GhiChu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Created_By" Type="Int32" />
+          <Property Name="Created_Date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_By" Type="Int32" />
+          <Property Name="Updated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Deleted_By" Type="Int32" />
+          <Property Name="Deleted_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tb_ViPham_CT">
+          <Key>
+            <PropertyRef Name="MaVPCT" />
+          </Key>
+          <Property Name="MaVPCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaViPham" Type="Int32" />
+          <Property Name="MaLoi" Type="Int32" />
+          <Property Name="TenLoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Diem" Type="Int32" />
+          <Property Name="MaHS" Type="Int32" />
+          <Property Name="NgayViPham" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUANLYHOCSINHModelStoreContainer" CdmEntityContainer="QUANLYHOCSINHEntities">
+          <EntitySetMapping Name="tb_ChucVu">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_ChucVu">
+              <MappingFragment StoreEntitySet="tb_ChucVu">
+                <ScalarProperty Name="TenCV" ColumnName="TenCV" />
+                <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DanhMucLoi">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_DanhMucLoi">
+              <MappingFragment StoreEntitySet="tb_DanhMucLoi">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="NGHIEMTRONG" ColumnName="NGHIEMTRONG" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="DIEM" ColumnName="DIEM" />
+                <ScalarProperty Name="TENVP" ColumnName="TENVP" />
+                <ScalarProperty Name="MAVP" ColumnName="MAVP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_GiaoVien">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_GiaoVien">
+              <MappingFragment StoreEntitySet="tb_GiaoVien">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="MaCV" ColumnName="MaCV" />
+                <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MAGV" ColumnName="MAGV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_GiaoVienLop">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_GiaoVienLop">
+              <MappingFragment StoreEntitySet="tb_GiaoVienLop">
+                <ScalarProperty Name="MaHK" ColumnName="MaHK" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaGV" ColumnName="MaGV" />
+                <ScalarProperty Name="MaGV_lop" ColumnName="MaGV_lop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_HocKy">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_HocKy">
+              <MappingFragment StoreEntitySet="tb_HocKy">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="HeSo" ColumnName="HeSo" />
+                <ScalarProperty Name="TenHK" ColumnName="TenHK" />
+                <ScalarProperty Name="MaHK" ColumnName="MaHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_HocSinh">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_HocSinh">
+              <MappingFragment StoreEntitySet="tb_HocSinh">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaTG" ColumnName="MaTG" />
+                <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_KetQua">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_KetQua">
+              <MappingFragment StoreEntitySet="tb_KetQua">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="XepLoai" ColumnName="XepLoai" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+                <ScalarProperty Name="DiemThiLan2" ColumnName="DiemThiLan2" />
+                <ScalarProperty Name="DiemThiLan1" ColumnName="DiemThiLan1" />
+                <ScalarProperty Name="DiemKT" ColumnName="DiemKT" />
+                <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+                <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+                <ScalarProperty Name="MaKQ" ColumnName="MaKQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Lop">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_Lop">
+              <MappingFragment StoreEntitySet="tb_Lop">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
+                <ScalarProperty Name="SapXep" ColumnName="SapXep" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_MonHoc">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_MonHoc">
+              <MappingFragment StoreEntitySet="tb_MonHoc">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+                <ScalarProperty Name="HeSo" ColumnName="HeSo" />
+                <ScalarProperty Name="TenMH" ColumnName="TenMH" />
+                <ScalarProperty Name="MaMH" ColumnName="MaMH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NamHoc">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_NamHoc">
+              <MappingFragment StoreEntitySet="tb_NamHoc">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="TenNamHoc" ColumnName="TenNamHoc" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TrinhDo">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_TrinhDo">
+              <MappingFragment StoreEntitySet="tb_TrinhDo">
+                <ScalarProperty Name="TenTD" ColumnName="TenTD" />
+                <ScalarProperty Name="MaTD" ColumnName="MaTD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Truong">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_Truong">
+              <MappingFragment StoreEntitySet="tb_Truong">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
+                <ScalarProperty Name="MaTruong" ColumnName="MaTruong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_User">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_User">
+              <MappingFragment StoreEntitySet="tb_User">
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="MALOP" ColumnName="MALOP" />
+                <ScalarProperty Name="MATRUONG" ColumnName="MATRUONG" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ViPham">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_ViPham">
+              <MappingFragment StoreEntitySet="tb_ViPham">
+                <ScalarProperty Name="Deleted_Date" ColumnName="Deleted_Date" />
+                <ScalarProperty Name="Deleted_By" ColumnName="Deleted_By" />
+                <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+                <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="MaHK" ColumnName="MaHK" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="TongDiem" ColumnName="TongDiem" />
+                <ScalarProperty Name="TongSoLoi" ColumnName="TongSoLoi" />
+                <ScalarProperty Name="NgayViPham" ColumnName="NgayViPham" />
+                <ScalarProperty Name="MaViPham" ColumnName="MaViPham" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ViPham_CT">
+            <EntityTypeMapping TypeName="QUANLYHOCSINHModel.tb_ViPham_CT">
+              <MappingFragment StoreEntitySet="tb_ViPham_CT">
+                <ScalarProperty Name="NgayViPham" ColumnName="NgayViPham" />
+                <ScalarProperty Name="MaHS" ColumnName="MaHS" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+                <ScalarProperty Name="TenLoi" ColumnName="TenLoi" />
+                <ScalarProperty Name="MaLoi" ColumnName="MaLoi" />
+                <ScalarProperty Name="MaViPham" ColumnName="MaViPham" />
+                <ScalarProperty Name="MaVPCT" ColumnName="MaVPCT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

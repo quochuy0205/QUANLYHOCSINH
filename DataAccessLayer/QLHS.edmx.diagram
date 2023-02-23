@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="14bc64d9650c48a9a1dd85f3ce27a95d" Name="Diagram1">
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ChucVu" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_DanhMucLoi" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_GiaoVien" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_GiaoVienLop" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_HocKy" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_HocSinh" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_KetQua" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_Lop" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_MonHoc" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_NamHoc" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_TrinhDo" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_Truong" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_User" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ViPham" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="QUANLYHOCSINHModel.tb_ViPham_CT" Width="1.5" PointX="12.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
