@@ -9,10 +9,10 @@ namespace BussinessLayer
 {
    public class NAMHOC
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
         public  NAMHOC()
             {
-            db = new QUANLYHOCSINHEntities();
+            db = new QUANLYHOCSINHEntities1();
             }
         //Lay danh sach nam hoc
         public List<tb_NamHoc> getList()

@@ -19,6 +19,7 @@ namespace DataAccessLayer
         public string GhiChu { get; set; }
         public Nullable<int> SapXep { get; set; }
         public Nullable<int> MaTruong { get; set; }
+        public Nullable<int> MaKL { get; set; }
         public Nullable<int> Created_By { get; set; }
         public Nullable<System.DateTime> Created_Date { get; set; }
         public Nullable<int> Updated_By { get; set; }

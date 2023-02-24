@@ -11,10 +11,10 @@ namespace BussinessLayer
 {
     public class GIAOVIEN
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
         public GIAOVIEN()
         {
-             db = new QUANLYHOCSINHEntities();
+             db = new QUANLYHOCSINHEntities1();
         }
         public tb_GiaoVien getItem(int maGV)
         {

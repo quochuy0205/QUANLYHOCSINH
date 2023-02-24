@@ -9,11 +9,11 @@ namespace BussinessLayer
 {
     public class DM_VIPHAM
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
 
         public DM_VIPHAM()
         {
-            db = new QUANLYHOCSINHEntities();
+            db = new QUANLYHOCSINHEntities1();
         }
         
         public List<tb_DanhMucLoi> getlist()

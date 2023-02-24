@@ -9,10 +9,10 @@ namespace BussinessLayer
 {
     public class TRINHDO
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
         public TRINHDO()
         {
-             db = new QUANLYHOCSINHEntities();
+             db = new QUANLYHOCSINHEntities1();
         }
         public List<tb_TrinhDo> getList()
         {

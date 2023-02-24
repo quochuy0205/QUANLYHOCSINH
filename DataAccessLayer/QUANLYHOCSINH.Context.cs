@@ -13,10 +13,10 @@ namespace DataAccessLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QUANLYHOCSINHEntities : DbContext
+    public partial class QUANLYHOCSINHEntities1 : DbContext
     {
-        public QUANLYHOCSINHEntities()
-            : base("name=QUANLYHOCSINHEntities")
+        public QUANLYHOCSINHEntities1()
+            : base("name=QUANLYHOCSINHEntities1")
         {
         }
     
@@ -32,6 +32,7 @@ namespace DataAccessLayer
         public virtual DbSet<tb_HocKy> tb_HocKy { get; set; }
         public virtual DbSet<tb_HocSinh> tb_HocSinh { get; set; }
         public virtual DbSet<tb_KetQua> tb_KetQua { get; set; }
+        public virtual DbSet<tb_KhoiLop> tb_KhoiLop { get; set; }
         public virtual DbSet<tb_Lop> tb_Lop { get; set; }
         public virtual DbSet<tb_MonHoc> tb_MonHoc { get; set; }
         public virtual DbSet<tb_NamHoc> tb_NamHoc { get; set; }

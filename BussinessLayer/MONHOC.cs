@@ -9,10 +9,10 @@ namespace BussinessLayer
 {
     public class MONHOC
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
         public MONHOC()
         {
-            db = new QUANLYHOCSINHEntities();
+            db = new QUANLYHOCSINHEntities1();
         }
         public tb_MonHoc getItem(int mamh)
         {

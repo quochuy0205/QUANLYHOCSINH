@@ -12,14 +12,9 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_ViPham_CT
+    public partial class tb_KhoiLop
     {
-        public int MaVPCT { get; set; }
-        public Nullable<int> MaViPham { get; set; }
-        public Nullable<int> MaLoi { get; set; }
-        public Nullable<int> Diem { get; set; }
-        public Nullable<int> MaHS { get; set; }
-        public Nullable<System.DateTime> NgayViPham { get; set; }
-        public string GhiChu { get; set; }
+        public int MaKL { get; set; }
+        public string TenKL { get; set; }
     }
 }

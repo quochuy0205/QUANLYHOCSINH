@@ -74,5 +74,10 @@ namespace QUANLYHOCSINH
         {
             openForm(typeof(frmQuanLyLoiVP));
         }
+
+        private void mnKhoiLop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmKhoiLop));
+        }
     }
 }

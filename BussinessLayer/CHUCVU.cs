@@ -9,10 +9,10 @@ namespace BussinessLayer
 {
     public class CHUCVU
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
         public CHUCVU()
         {
-            db =  new QUANLYHOCSINHEntities();
+            db =  new QUANLYHOCSINHEntities1();
         }
 
         public List<tb_ChucVu> getList()

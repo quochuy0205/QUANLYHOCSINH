@@ -54,13 +54,20 @@
     <Compile Include="CHUCVU.cs" />
     <Compile Include="DM_VIPHAM.cs" />
     <Compile Include="DTO\GiaoVienDTO.cs" />
+    <Compile Include="DTO\VIPHAM_CT_DTO.cs" />
     <Compile Include="GIAOVIEN.cs" />
+    <Compile Include="KHOILOP.cs" />
     <Compile Include="MONHOC.cs" />
     <Compile Include="NAMHOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TRINHDO.cs" />
     <Compile Include="USERS.cs" />
     <Compile Include="VIPHAM.cs" />
+    <Compile Include="VIPHAM_CT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
@@ -69,10 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

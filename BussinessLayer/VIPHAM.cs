@@ -9,11 +9,11 @@ namespace BussinessLayer
 {
     public class VIPHAM
     {
-        QUANLYHOCSINHEntities db = null;
+        QUANLYHOCSINHEntities1 db = null;
 
         public VIPHAM()
         {
-            db = new QUANLYHOCSINHEntities();
+            db = new QUANLYHOCSINHEntities1();
         }
 
         public List<tb_ViPham> getList()
@@ -63,10 +63,13 @@ namespace BussinessLayer
             }
         }
 
-        public void Delete (int mavp)
+        public void Delete (int mavp, int idUser)
         {
                 var _vp = db.tb_ViPham.FirstOrDefault(x=>x.MaViPham==mavp);
-                db.tb_ViPham.Remove(_vp);
+            _vp.Deleted_By = idUser;
+            _vp.Deleted_Date= DateTime.Now;
+            db.SaveChanges();
+                
         }
     }
 }

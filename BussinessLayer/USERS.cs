@@ -10,10 +10,10 @@ namespace BussinessLayer
 {
     public  class USERS
     {
-        QUANLYHOCSINHEntities db;
+        QUANLYHOCSINHEntities1 db;
         public USERS()  
         {
-            db = new QUANLYHOCSINHEntities();
+            db = new QUANLYHOCSINHEntities1();
         }
         public tb_User getItem(string username)
         {
