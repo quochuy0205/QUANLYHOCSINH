@@ -18,16 +18,57 @@ namespace QUANLYHOCSINH
         {
             InitializeComponent();
         }
-        NAMHOC nh;
-        
+        NAMHOC _nh;
+        HOCKY _hocky;
+        KHOILOP _khoilop;
+        LOP _lophoc;
+        HOCSINH _hocsinh;
+        DM_VIPHAM _loi;
         private void frmQuanLyLoiVP_Load(object sender, EventArgs e)
         {
+            _nh = new NAMHOC();
+            _hocky = new HOCKY();
+            _lophoc = new LOP();
+            _khoilop= new KHOILOP();
+            _hocsinh = new HOCSINH();
+            _loi = new DM_VIPHAM();
             showHide(true);
+            LoadData();
+            LoadHocSinh();
+            LoadDMLOI();
         }
 
         void LoadData()
         {
+            cbnamhoc.DataSource=_nh.getList();
+            cbnamhoc.DisplayMember = "TenNamHoc";
+            cbnamhoc.ValueMember = "MaNamHoc";
 
+            cbhocky.DataSource = _hocky.getList();
+            cbhocky.DisplayMember = "TenHK";
+            cbhocky.ValueMember = "MaHK";
+
+            cbkhoilop.DataSource = _khoilop.getList();
+            cbkhoilop.DisplayMember = "TenKL";
+            cbkhoilop.ValueMember = "MaKL";
+
+            cblop.DataSource = _lophoc.getList();
+            cblop.DisplayMember = "TenLop";
+            cblop.ValueMember = "MaLop";
+        }
+
+        void LoadHocSinh()
+        {
+            slHS.Properties.DataSource = _hocsinh.getList();
+            slHS.Properties.DisplayMember = "HOTEN" + "TEN";
+            slHS.Properties.ValueMember = "MaHS";
+        }
+
+        void LoadDMLOI()
+        {
+            slDmloi.Properties.DataSource = _loi.getlist();
+            slDmloi.Properties.DisplayMember = "TENVP";
+            slDmloi.Properties.ValueMember = "MAVP";
         }
         void showHide(bool kt)
         {
