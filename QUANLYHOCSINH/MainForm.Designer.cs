@@ -271,6 +271,7 @@
             this.mnHocKy.Id = 17;
             this.mnHocKy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnHocKy.ImageOptions.SvgImage")));
             this.mnHocKy.Name = "mnHocKy";
+            this.mnHocKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnHocKy_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -278,6 +279,7 @@
             this.barButtonItem2.Id = 18;
             this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
             this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // mnKhoiLop
             // 
@@ -296,10 +298,11 @@
             // 
             // mnHocLuc
             // 
-            this.mnHocLuc.Caption = "Học Lực";
+            this.mnHocLuc.Caption = "Trường";
             this.mnHocLuc.Id = 23;
             this.mnHocLuc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("mnHocLuc.ImageOptions.SvgImage")));
             this.mnHocLuc.Name = "mnHocLuc";
+            this.mnHocLuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.mnHocLuc_ItemClick);
             // 
             // mnHanhKiem
             // 

@@ -1,6 +1,6 @@
 ﻿namespace QUANLYHOCSINH
 {
-    partial class frmNamHoc
+    partial class frmHocKy
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnIn = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txttennamhoc = new System.Windows.Forms.TextBox();
+            this.txtHeSo = new System.Windows.Forms.TextBox();
+            this.txtTenHocKy = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gdDanhSach = new DevExpress.XtraGrid.GridControl();
-            this.tbNamHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gvNamHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaNamHoc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenNamHoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tbHocKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gvHocKy = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaHK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenHK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHeSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreated_By = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreated_Date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUpdated_By = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,27 +57,9 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbNamHocBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNamHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHocKyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHocKy)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // splitContainer1
             // 
@@ -88,159 +70,176 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnIn);
             this.splitContainer1.Panel1.Controls.Add(this.btnDong);
             this.splitContainer1.Panel1.Controls.Add(this.btnHuy);
             this.splitContainer1.Panel1.Controls.Add(this.btnLuu);
             this.splitContainer1.Panel1.Controls.Add(this.btnXoa);
             this.splitContainer1.Panel1.Controls.Add(this.btnSua);
             this.splitContainer1.Panel1.Controls.Add(this.btnThem);
-            this.splitContainer1.Panel1.Controls.Add(this.txttennamhoc);
+            this.splitContainer1.Panel1.Controls.Add(this.txtHeSo);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTenHocKy);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gdDanhSach);
-            this.splitContainer1.Size = new System.Drawing.Size(1353, 440);
-            this.splitContainer1.SplitterDistance = 172;
+            this.splitContainer1.Size = new System.Drawing.Size(1325, 485);
+            this.splitContainer1.SplitterDistance = 178;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(962, 119);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(112, 34);
-            this.btnIn.TabIndex = 8;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(844, 119);
+            this.btnDong.Location = new System.Drawing.Point(854, 138);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(112, 34);
-            this.btnDong.TabIndex = 7;
+            this.btnDong.TabIndex = 9;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(726, 119);
+            this.btnHuy.Location = new System.Drawing.Point(736, 138);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(112, 34);
-            this.btnHuy.TabIndex = 6;
+            this.btnHuy.TabIndex = 8;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(608, 119);
+            this.btnLuu.Location = new System.Drawing.Point(618, 138);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(112, 34);
-            this.btnLuu.TabIndex = 5;
+            this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(489, 119);
+            this.btnXoa.Location = new System.Drawing.Point(500, 138);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 34);
-            this.btnXoa.TabIndex = 4;
+            this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(371, 119);
+            this.btnSua.Location = new System.Drawing.Point(382, 138);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(112, 34);
-            this.btnSua.TabIndex = 3;
+            this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(253, 119);
+            this.btnThem.Location = new System.Drawing.Point(264, 138);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(112, 34);
-            this.btnThem.TabIndex = 2;
+            this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txttennamhoc
+            // txtHeSo
             // 
-            this.txttennamhoc.Location = new System.Drawing.Point(333, 63);
-            this.txttennamhoc.Name = "txttennamhoc";
-            this.txttennamhoc.Size = new System.Drawing.Size(150, 27);
-            this.txttennamhoc.TabIndex = 1;
-            this.txttennamhoc.Text = "2021-2022";
+            this.txtHeSo.Location = new System.Drawing.Point(264, 105);
+            this.txtHeSo.Name = "txtHeSo";
+            this.txtHeSo.Size = new System.Drawing.Size(348, 27);
+            this.txtHeSo.TabIndex = 3;
+            // 
+            // txtTenHocKy
+            // 
+            this.txtTenHocKy.Location = new System.Drawing.Point(264, 46);
+            this.txtTenHocKy.Name = "txtTenHocKy";
+            this.txtTenHocKy.Size = new System.Drawing.Size(348, 27);
+            this.txtTenHocKy.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(207, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Hệ Số";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 63);
+            this.label1.Location = new System.Drawing.Point(168, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(90, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Năm Học";
+            this.label1.Text = "Tên Học Kỳ";
             // 
             // gdDanhSach
             // 
-            this.gdDanhSach.DataSource = this.tbNamHocBindingSource;
+            this.gdDanhSach.DataSource = this.tbHocKyBindingSource;
             this.gdDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gdDanhSach.Location = new System.Drawing.Point(0, 0);
-            this.gdDanhSach.MainView = this.gvNamHoc;
+            this.gdDanhSach.MainView = this.gvHocKy;
             this.gdDanhSach.Name = "gdDanhSach";
-            this.gdDanhSach.Size = new System.Drawing.Size(1353, 264);
+            this.gdDanhSach.Size = new System.Drawing.Size(1325, 303);
             this.gdDanhSach.TabIndex = 0;
             this.gdDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvNamHoc});
-            this.gdDanhSach.Click += new System.EventHandler(this.gdDanhSach_Click);
+            this.gvHocKy});
             // 
-            // tbNamHocBindingSource
+            // tbHocKyBindingSource
             // 
-            this.tbNamHocBindingSource.DataSource = typeof(DataAccessLayer.tb_NamHoc);
+            this.tbHocKyBindingSource.DataSource = typeof(DataAccessLayer.tb_HocKy);
             // 
-            // gvNamHoc
+            // gvHocKy
             // 
-            this.gvNamHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaNamHoc,
-            this.colTenNamHoc,
+            this.gvHocKy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaHK,
+            this.colTenHK,
+            this.colHeSo,
             this.colCreated_By,
             this.colCreated_Date,
             this.colUpdated_By,
             this.colUpdated_Date,
             this.colDeleted_By,
             this.colDeleted_Date});
-            this.gvNamHoc.GridControl = this.gdDanhSach;
-            this.gvNamHoc.Name = "gvNamHoc";
+            this.gvHocKy.GridControl = this.gdDanhSach;
+            this.gvHocKy.Name = "gvHocKy";
+            this.gvHocKy.Click += new System.EventHandler(this.gvHocKy_Click);
             // 
-            // colMaNamHoc
+            // colMaHK
+            this.colMaHK.Caption = "Mã Học Kỳ";
+            this.colMaHK.FieldName = "MaHK";
+            this.colMaHK.MinWidth = 30;
+            this.colMaHK.Name = "colMaHK";
+            this.colMaHK.Visible = true;
+            this.colMaHK.VisibleIndex = 0;
+            this.colMaHK.Width = 112;
             // 
-            this.colMaNamHoc.Caption = "Mã Năm Học";
-            this.colMaNamHoc.FieldName = "MaNamHoc";
-            this.colMaNamHoc.MinWidth = 30;
-            this.colMaNamHoc.Name = "colMaNamHoc";
-            this.colMaNamHoc.Visible = true;
-            this.colMaNamHoc.VisibleIndex = 0;
-            this.colMaNamHoc.Width = 112;
+            // colTenHK
             // 
-            // colTenNamHoc
+            this.colTenHK.Caption = "Tên Học Kỳ";
+            this.colTenHK.FieldName = "TenHK";
+            this.colTenHK.MinWidth = 30;
+            this.colTenHK.Name = "colTenHK";
+            this.colTenHK.Visible = true;
+            this.colTenHK.VisibleIndex = 1;
+            this.colTenHK.Width = 112;
             // 
-            this.colTenNamHoc.Caption = "Tên Năm Học";
-            this.colTenNamHoc.FieldName = "TenNamHoc";
-            this.colTenNamHoc.MinWidth = 30;
-            this.colTenNamHoc.Name = "colTenNamHoc";
-            this.colTenNamHoc.Visible = true;
-            this.colTenNamHoc.VisibleIndex = 1;
-            this.colTenNamHoc.Width = 112;
+            // colHeSo
+            // 
+            this.colHeSo.Caption = "Hệ Số";
+            this.colHeSo.FieldName = "HeSo";
+            this.colHeSo.MinWidth = 30;
+            this.colHeSo.Name = "colHeSo";
+            this.colHeSo.Visible = true;
+            this.colHeSo.VisibleIndex = 2;
+            this.colHeSo.Width = 112;
             // 
             // colCreated_By
             // 
@@ -248,7 +247,7 @@
             this.colCreated_By.MinWidth = 30;
             this.colCreated_By.Name = "colCreated_By";
             this.colCreated_By.Visible = true;
-            this.colCreated_By.VisibleIndex = 2;
+            this.colCreated_By.VisibleIndex = 3;
             this.colCreated_By.Width = 112;
             // 
             // colCreated_Date
@@ -257,7 +256,7 @@
             this.colCreated_Date.MinWidth = 30;
             this.colCreated_Date.Name = "colCreated_Date";
             this.colCreated_Date.Visible = true;
-            this.colCreated_Date.VisibleIndex = 3;
+            this.colCreated_Date.VisibleIndex = 4;
             this.colCreated_Date.Width = 112;
             // 
             // colUpdated_By
@@ -266,7 +265,7 @@
             this.colUpdated_By.MinWidth = 30;
             this.colUpdated_By.Name = "colUpdated_By";
             this.colUpdated_By.Visible = true;
-            this.colUpdated_By.VisibleIndex = 4;
+            this.colUpdated_By.VisibleIndex = 5;
             this.colUpdated_By.Width = 112;
             // 
             // colUpdated_Date
@@ -275,7 +274,7 @@
             this.colUpdated_Date.MinWidth = 30;
             this.colUpdated_Date.Name = "colUpdated_Date";
             this.colUpdated_Date.Visible = true;
-            this.colUpdated_Date.VisibleIndex = 5;
+            this.colUpdated_Date.VisibleIndex = 6;
             this.colUpdated_Date.Width = 112;
             // 
             // colDeleted_By
@@ -284,7 +283,7 @@
             this.colDeleted_By.MinWidth = 30;
             this.colDeleted_By.Name = "colDeleted_By";
             this.colDeleted_By.Visible = true;
-            this.colDeleted_By.VisibleIndex = 6;
+            this.colDeleted_By.VisibleIndex = 7;
             this.colDeleted_By.Width = 112;
             // 
             // colDeleted_Date
@@ -293,36 +292,36 @@
             this.colDeleted_Date.MinWidth = 30;
             this.colDeleted_Date.Name = "colDeleted_Date";
             this.colDeleted_Date.Visible = true;
-            this.colDeleted_Date.VisibleIndex = 7;
+            this.colDeleted_Date.VisibleIndex = 8;
             this.colDeleted_Date.Width = 112;
             // 
-            // frmNamHoc
+            // frmHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 440);
+            this.ClientSize = new System.Drawing.Size(1325, 485);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frmNamHoc";
-            this.Text = "Năm Học";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmNamHoc_Load);
+            this.Name = "frmHocKy";
+            this.Text = "Học Kỳ";
+            this.Load += new System.EventHandler(this.frmHocKy_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gdDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbNamHocBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNamHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbHocKyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHocKy)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.Bar bar1;
+
         private SplitContainer splitContainer1;
-        private TextBox txttennamhoc;
+        private TextBox txtHeSo;
+        private TextBox txtTenHocKy;
+        private Label label2;
         private Label label1;
         private Button btnDong;
         private Button btnHuy;
@@ -331,16 +330,16 @@
         private Button btnSua;
         private Button btnThem;
         private DevExpress.XtraGrid.GridControl gdDanhSach;
-        private BindingSource tbNamHocBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvNamHoc;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaNamHoc;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenNamHoc;
+        private BindingSource tbHocKyBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvHocKy;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaHK;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenHK;
+        private DevExpress.XtraGrid.Columns.GridColumn colHeSo;
         private DevExpress.XtraGrid.Columns.GridColumn colCreated_By;
         private DevExpress.XtraGrid.Columns.GridColumn colCreated_Date;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdated_By;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdated_Date;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted_By;
         private DevExpress.XtraGrid.Columns.GridColumn colDeleted_Date;
-        private Button btnIn;
     }
 }

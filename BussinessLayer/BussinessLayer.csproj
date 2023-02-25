@@ -56,11 +56,14 @@
     <Compile Include="DTO\GiaoVienDTO.cs" />
     <Compile Include="DTO\VIPHAM_CT_DTO.cs" />
     <Compile Include="GIAOVIEN.cs" />
+    <Compile Include="HOCKY.cs" />
     <Compile Include="KHOILOP.cs" />
+    <Compile Include="LOP.cs" />
     <Compile Include="MONHOC.cs" />
     <Compile Include="NAMHOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TRINHDO.cs" />
+    <Compile Include="TRUONG.cs" />
     <Compile Include="USERS.cs" />
     <Compile Include="VIPHAM.cs" />
     <Compile Include="VIPHAM_CT.cs" />

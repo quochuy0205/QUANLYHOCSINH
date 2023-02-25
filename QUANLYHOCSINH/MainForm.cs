@@ -79,5 +79,20 @@ namespace QUANLYHOCSINH
         {
             openForm(typeof(frmKhoiLop));
         }
+
+        private void mnHocLuc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmTruong));
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLop));
+        }
+
+        private void mnHocKy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            openForm(typeof(frmHocKy));
+        }
     }
 }
